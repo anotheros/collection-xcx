@@ -1,7 +1,7 @@
 # collection-xcx
 微刊 小程序版本
 
-![微刊api](https://github.com/zhangshanhai/readthis-api/blob/master/doc/collections.md#%E8%8E%B7%E5%8F%96%E5%BE%AE%E5%88%8A%E5%86%85%E7%9A%84%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8)
+[微刊api](https://github.com/zhangshanhai/readthis-api/blob/master/doc/collections.md#%E8%8E%B7%E5%8F%96%E5%BE%AE%E5%88%8A%E5%86%85%E7%9A%84%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8)
 
 
 
