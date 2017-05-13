@@ -1,0 +1,21 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<!--标题信息-->
+<view class="titleView">
+    <text class="title">{{article.title}}</text>
+    <view>
+        <text class="date">{{article.createTime}}             </text>
+    </view>
+ </view>
+    <view class="tags">
+            <text wx:for="{{article.tags}}" class="tag" data-aid="{{item.id}}" >
+                    <text>{{item.tagName}}</text>
+             </text>
+    </view>
+
+  <view class="summary">
+                    {{article.summary}}
+        </view>
+<!--正文-->
+<view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
