@@ -14,7 +14,7 @@ Page({
     })
     //获取分类信息
     wx.request({
-      url: 'https://100000p.loveav.me/v2/users/1/collections',
+      url: 'https://100000p.loveav.me/v2/users/' + app.globalData.userId+'/collections',
         data : {},
         success : function(res){
           sectionData = res.data;
