@@ -50,10 +50,9 @@ Page({
     }   
   },
   loadArticles: function(id){
-    var that = this
-    this.setData({
-      hidden:false
-    })
+    var that = this;
+    wx.showNavigationBarLoading();
+
     //获取文章列表
     wx.request({
       url: 'https://100000p.loveav.me/v2/collections/'+id+'/articles',
@@ -67,23 +66,26 @@ Page({
           //console.log(articleData);
           for (var i = 0; i < articleData.length; i++) {
 
-            articleData[i].createTime = Util.getTime(articleData[i].createTime/1000);
+            articleData[i].createTime = Util.formatMsgTime(articleData[i].createTime);
           } 
             sectionData[currentSectionIndex]['articles'] = articleData;//刷新
             that.setData({
               articles : sectionData[currentSectionIndex]['articles'],
-              hidden: true
+              
           });
-          wx.stopPullDownRefresh();//结束动画
+          
+        },
+        complete: function () {
+          // complete
+          wx.hideNavigationBarLoading() //完成停止加载
+          wx.stopPullDownRefresh() //停止下拉刷新
         }
     })
   },
 
   loadMoreArticles: function (id,articleId) {
     var that = this;
-    this.setData({
-      hidden: false
-    });
+    wx.showNavigationBarLoading();
     //获取文章列表
     wx.request({
       url: 'https://100000p.loveav.me/v2/collections/' + id + '/articles?cursor=' + articleId,
@@ -97,7 +99,7 @@ Page({
         //console.log(articleData);
         for (var i = 0; i < articleData.length; i++) {
 
-          articleData[i].createTime = Util.getTime(articleData[i].createTime / 1000);
+          articleData[i].createTime = Util.formatMsgTime(articleData[i].createTime);
         } 
           //加载更多
         if (articleData.length>0) {
@@ -112,10 +114,14 @@ Page({
        
 
         that.setData({
-          articles: sectionData[currentSectionIndex]['articles'],
-          hidden: true
+          articles: sectionData[currentSectionIndex]['articles']
+         
         });
-        wx.stopPullDownRefresh()//结束动画
+      },
+      complete: function () {
+        // complete
+        wx.hideNavigationBarLoading() //完成停止加载
+        wx.stopPullDownRefresh() //停止下拉刷新
       }
     })
   },
@@ -127,10 +133,12 @@ Page({
   },
   //下拉刷新
   onPullDownRefresh: function(){
+    if (this.data.loading) return;
     this.loadArticles(sectionData[currentSectionIndex]['id'])
   },
   //加载更多
   onReachBottom: function () {
+    if (this.data.loading) return;
     var articleTmp = sectionData[currentSectionIndex]['articles'];
     //console.log(articleTmp[articleTmp.length - 1].id);
    this.loadMoreArticles(sectionData[currentSectionIndex]['id'],articleTmp[articleTmp.length - 1].id );
@@ -140,7 +148,6 @@ Page({
     return {
       title: '10万加--老张分享的优质文章',
       desc: '老张每天分享的优质文章!',
-      path: '/page/user?id=123',
       success: function (res) {
         // 转发成功
         wx.showToast({

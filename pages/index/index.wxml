@@ -1,6 +1,3 @@
-<loading hidden="{{hidden}}">
-    加载中...
-</loading>
 <!--头部分类-->
 <scroll-view class="segments" scroll-x="true">
   <view wx:for="{{sections}}" class="section {{item.active ? 'active' : ''}}" data-sid="{{item.id}}" bindtap="onSectionClicked">
@@ -10,8 +7,6 @@
 <!--文章列表-->
 <view class="articles">
   <view wx:for="{{articles}}" class="article" data-aid="{{item.id}}" bindtap="onArticleClicked">
-  
-            
                 <view class="title">
                     {{item.title}}
                 </view>
@@ -19,17 +14,14 @@
                     <text>{{item.createTime}}</text>
                 </view>   
                 <view class="tags">
-            <view wx:for="{{item.tags}}" class="tag" data-aid="{{item.id}}" >
-                    <text>{{item.tagName}}</text>
-             </view>
- </view>
-            <view class="summary">
+                  <view wx:for="{{item.tags}}" class="tag" data-aid="{{item.id}}" >
+                          <text>{{item.tagName}}</text>
+                  </view>
+                </view>
+        <view class="summary">
                     {{item.summary}}
         </view>
 
-            <view style="clear:both"></view>
-   </view>
-  
-        
+        <view style="clear:both"></view>
+   </view>        
 </view>
-

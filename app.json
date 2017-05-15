@@ -7,6 +7,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#1E90FF",
     "navigationBarTitleText": "10万加--老张分享头条",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
   }
 }
