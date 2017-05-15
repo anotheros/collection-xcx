@@ -68,9 +68,9 @@
 }
 
 .summary{
-    font-size: 15px;
+    font-size:30rpx;
+    line-height:45rpx;
     color:#aaa;
-    line-height:20px;
     padding-top:10px;
 }
 
