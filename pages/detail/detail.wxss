@@ -32,12 +32,14 @@
 .summary{
     font-size: 15px;
     color:#aaa;
-    line-height:20px;
+    line-height:1.5;
     padding:8px;
+    text-indent: 20rpx; 
 }
 .content{
     padding:8px;
     margin-bottom:10px;
+    text-indent: 25rpx;
 }
 
 .commentBar{
