@@ -1,10 +1,16 @@
-var WxParse = require('../../wxParse/wxParse.js');
+var wemark = require('../../wemark/wemark.js');
 var Util = require('../../utils/util.js');
 var article_id = '';
 var title='';
 var summary='';
+
+var options = {
+  imageWidth: wx.getSystemInfoSync().windowWidth - 40,
+  name: 'wemark'
+};
 Page({
-  data:{},
+  data: { wemark: {}},
+ 
   onLoad:function(options){
     var that = this
     article_id = options.id 
@@ -21,10 +27,11 @@ Page({
           title = res.data.title;
           summary = res.data.summary;
           res.data.createTime =Util.getTime(res.data.createTime / 1000);
-          that.setData({
-              article: res.data
-          });
-          WxParse.wxParse('content', 'md', _content, that,0);
+            that.setData({
+                article: res.data
+            });
+          
+          wemark.parse(_content, that, options );
         }
     })  
   },

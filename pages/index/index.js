@@ -65,7 +65,8 @@ Page({
           var articleData = res.data;
           //console.log(articleData);
           for (var i = 0; i < articleData.length; i++) {
-
+            articleData[i].summary = Util.cutSummary(articleData[i].summary);
+            console.log(articleData[i].summary);
             articleData[i].createTime = Util.formatMsgTime(articleData[i].createTime);
           } 
             sectionData[currentSectionIndex]['articles'] = articleData;//刷新
@@ -98,7 +99,8 @@ Page({
         var articleData = res.data;
         //console.log(articleData);
         for (var i = 0; i < articleData.length; i++) {
-
+          articleData[i].summary = Util.cutSummary(articleData[i].summary);
+          console.log(articleData[i].summary);
           articleData[i].createTime = Util.formatMsgTime(articleData[i].createTime);
         } 
           //加载更多

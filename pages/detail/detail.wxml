@@ -1,4 +1,4 @@
-<import src="../../wxParse/wxParse.wxml"/> 
+<import src="../../wemark/wemark.wxml"/>
 <!--标题信息-->
 <view class="titleView">
     <text class="title">{{article.title}}</text>
@@ -17,5 +17,5 @@
         </view>
 <!--正文-->
 <view class="content">
-    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    <template is="wemark" data="{{...wemark}}"></template>
 </view>

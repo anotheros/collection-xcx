@@ -1,4 +1,4 @@
-@import "/wxParse/wxParse.wxss";
+@import '../../wemark/wemark.wxss';
 .titleView{
     padding:8px;
 }

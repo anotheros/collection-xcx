@@ -22,6 +22,13 @@ function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
+function cutSummary(s){
+  if (s && s.length>200){
+    s = s.substring(0,200)+'...';
+  }
+  return s;
+}
 function formatMsgTime(timespan) {
   var dateTime = new Date(timespan);
 
@@ -75,5 +82,6 @@ module.exports = {
   formatTime: formatTime,
   getTime: getTime,
   getDate: getDate,
-  formatMsgTime: formatMsgTime
+  formatMsgTime: formatMsgTime,
+  cutSummary: cutSummary
 }
