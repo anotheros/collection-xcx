@@ -98,6 +98,9 @@
 .wemark_inline_image{
 	width:100%;
 	height:auto;
+  clear: both; 
+  display: block; 
+  margin:auto; 
 }
 .wemark_inline_code{
 	background:#f0f0f0;

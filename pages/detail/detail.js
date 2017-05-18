@@ -5,7 +5,7 @@ var title='';
 var summary='';
 
 var options = {
-  imageWidth: wx.getSystemInfoSync().windowWidth - 40,
+  imageWidth: wx.getSystemInfoSync().windowWidth,
   name: 'wemark'
 };
 Page({
