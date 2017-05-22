@@ -29,3 +29,8 @@
 [![](http://pub.idqqimg.com/wpa/images/group.png "用户交流群")](http://shang.qq.com/wpa/qunwpa?idkey=bc60b852e963704404153f225800257ab64dc5727cab6e777166f7d76046ba7a)
 
 群号:238068472
+
+
+## 例子
+
+![](https://github.com/zhangshanhai/collection-xcx/raw/master/gh_7f4a7039e66b_344.jpg)
